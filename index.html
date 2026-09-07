@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/c3b36ffc0c.js" crossorigin="anonymous"></script>
 </head>
 <body class="avenir">
-    <section class="header-bg mb3">
+    <section class="header-bg">
         <header class="center tc white header-bg-opacity">
             <p class="pt5 fw6 mv0" style="font-size: 2em;">EMNLP 2026 Tutorial</p>
             <p class="mt3 mb0 fw6" style="font-size: 2.5em;">
@@ -20,32 +20,35 @@
             </p>
         </header>
     </section>
-    <section class="mw8 center mv4">
+    <main>
+    <section class="presenter-section mw8 center">
        <div id="presenters">
             <div class="presenter">
-                <img src="static/images/authors/wei_xu.png" class="presenter-img">
+                <img src="static/images/authors/wei_xu.png" class="presenter-img" alt="Wei Xu">
                 <p class="mv1 f4"><a href="https://cocoxu.github.io/" class="link blue hover-orange" target="_blank">Wei Xu</a><sup>1</sup></p>
             </div>
             <div class="presenter">
-                <img src="static/images/authors/david_adelani.png" class="presenter-img">
+                <img src="static/images/authors/david_adelani.png" class="presenter-img" alt="David Ifeoluwa Adelani">
                 <p class="mv1 f4"><a href="https://dadelani.github.io/" class="link blue hover-orange" target="_blank">David Ifeoluwa Adelani</a><sup>2</sup></p>
             </div>
             <div class="presenter">
-                <img src="static/images/authors/vinod.png" class="presenter-img">
+                <img src="static/images/authors/vinod.png" class="presenter-img" alt="Vinodkumar Prabhakaran">
                 <p class="mv1 f4"><a href="https://cs.stanford.edu/~vinod/" class="link blue hover-orange" target="_blank">Vinodkumar Prabhakaran</a><sup>3</sup></p>
             </div>
             <div class="presenter">
-                <img src="static/images/authors/sara_hooker.png" class="presenter-img">
+                <img src="static/images/authors/sara_hooker.png" class="presenter-img" alt="Sara Hooker">
                 <p class="mv1 f4"><a href="https://www.sarahooker.me/" class="link blue hover-orange" target="_blank">Sara Hooker</a><sup>4</sup></p>
             </div>
             <div class="presenter">
-                <img src="static/images/authors/alan_ritter.png" class="presenter-img">
+                <img src="static/images/authors/alan_ritter.png" class="presenter-img" alt="Alan Ritter">
                 <p class="mv1 f4"><a href="https://aritter.github.io/" class="link blue hover-orange" target="_blank">Alan Ritter</a><sup>1</sup></p>
             </div>
         </div>
-        <div id="organization" class="tc">
-            <p class="f5 mv3"><sup>1</sup>Georgia Institute of Technology, <sup>2</sup>Mila/McGill University, <sup>3</sup>Google</p>
-            <p class="f5 mt2"><sup>4</sup>Adaption</p>
+        <div id="organization" class="tc" aria-label="Presenter affiliations">
+            <span><sup>1</sup> Georgia Institute of Technology</span>
+            <span><sup>2</sup> Mila / McGill University</span>
+            <span><sup>3</sup> Google</span>
+            <span><sup>4</sup> Adaption</span>
         </div>
 <!--
         <div class="tc f4 mt4">
@@ -84,12 +87,12 @@
                 </tr>
                 <tr>
                     <td class="f5">14:10 - 14:50</td>
-                    <td class="f5">Section 1: Multilingual reinforcement learning</td>
+                    <td class="f5">Section 1: The power of multilingual reinforcement learning</td>
                     <td class="f5">Wei Xu</td>
                 </tr>
                 <tr>
                     <td class="f5">14:50 - 15:30</td>
-                    <td class="f5">Section 2: Cross-lingual transfer learning</td>
+                    <td class="f5">Section 2: Reasoning across languages</td>
                     <td class="f5">Alan Ritter</td>
                 </tr>
                 <tr>
@@ -104,7 +107,7 @@
                 </tr>
                 <tr>
                     <td class="f5">16:40 - 17:05</td>
-                    <td class="f5">Section 4: Multimodal-multicultural aspects</td>
+                    <td class="f5">Section 4: Culture beyond words: multimodal and multicultural LLMs</td>
                     <td class="f5">David Ifeoluwa Adelani</td>
                 </tr>
                 <tr>
@@ -118,22 +121,31 @@
         <hr class="styled-hr">
     </section>
     <section class="mw7 center mv4">
-        <p class="f2-5 fw5 tc">BibTeX</p>
+        <div class="bibtex-heading">
+            <p class="f2-5 fw5">BibTeX</p>
+            <button class="copy-button" type="button" onclick="copyBibTeX()" aria-label="Copy BibTeX citation">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                <span id="copy-label">Copy</span>
+            </button>
+        </div>
         <div class="bibtex-container">
-            <i class="fa-regular fa-copy copy-icon dim" onclick="copyBibTeX()"></i>
             <pre class="bibtex-entry" id="bibtex-entry">@inproceedings{xu-etal-2026-multilingual,
-    title={Multilingual Multicultural LLMs},
-    author={Xu, Wei and Ifeoluwa Adelani, David and Prabhakaran, Vinodkumar and Hooker, Sara and Ritter, Alan},
-    booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing: Tutorial Abstracts},
-    year={2026}
+  title     = {Multilingual Multicultural LLMs},
+  author    = {Xu, Wei and Adelani, David Ifeoluwa and Prabhakaran, Vinodkumar and Hooker, Sara and Ritter, Alan},
+  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing: Tutorial Abstracts},
+  year      = {2026}
 }</pre>
         </div>
     </section>
+    </main>
 
 <script>
         function copyBibTeX() {
             const bibtexText = document.getElementById('bibtex-entry').innerText;
             navigator.clipboard.writeText(bibtexText).then(() => {
+                const label = document.getElementById('copy-label');
+                label.textContent = 'Copied!';
+                setTimeout(() => { label.textContent = 'Copy'; }, 1800);
             }).catch(err => {
                 console.error('Failed to copy text: ', err);
             });
