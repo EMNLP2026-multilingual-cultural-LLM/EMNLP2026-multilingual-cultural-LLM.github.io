@@ -1,0 +1,79 @@
+.header-bg {
+    background-image: url('../images/emnlp_2026_background_v0.jpg');
+    background-size: cover; /* Ensure the image covers the header */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+.header-bg p {
+    text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.header-bg-opacity {
+    background-color: rgba(0, 0, 0, 0.3); /* Black with 50% opacity */
+    padding: 0.5rem; /* Optional: Adds padding inside the header */
+}
+
+
+.presenter {
+    text-align: center;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+.presenter-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%; /* Optional: Makes the images circular */
+}
+
+.f2-5 {
+    font-size: 2.0em;
+}
+
+.f4-5 {
+    font-size: 1.1em;
+}
+
+.styled-hr {
+    border: 0;
+    height: 1.5px;
+    background-color: #e0e0e0; /* Light grey color */
+    margin: 40px 0;
+    opacity: 0.7;
+}
+
+.schedule-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.schedule-table th, .schedule-table td {
+    padding: 0.5rem;
+    text-align: left;
+}
+.schedule-table tr {
+    border-bottom: 1px solid #e1e1e1;
+}
+.schedule-table tr:last-child {
+    border-bottom: none;
+}
+
+
+.bibtex-container {
+    position: relative;
+    background-color: #f6f6f6;
+    border-radius: 0.5rem;
+    padding: 0.5em 1em;
+}
+
+.copy-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    color: #333;
+}
