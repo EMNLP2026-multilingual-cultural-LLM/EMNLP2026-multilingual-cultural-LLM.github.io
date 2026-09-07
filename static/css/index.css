@@ -59,7 +59,6 @@ a {
     border-radius: 50%;
     display: block;
     margin: 0 auto 0.7rem;
-    border: 4px solid #fff;
     box-shadow: 0 6px 22px rgba(15, 35, 65, 0.16);
 }
 
@@ -89,6 +88,44 @@ a {
 
 #organization span {
     white-space: nowrap;
+}
+
+.tutorial-paper-link {
+    margin: 1.75rem 0 0;
+    text-align: center;
+}
+
+.tutorial-paper-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #246fc7;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: underline;
+    text-decoration-color: rgba(36, 111, 199, 0.38);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+.tutorial-paper-link a:hover {
+    color: #d05a1a;
+    text-decoration-color: currentColor;
+}
+
+.tutorial-paper-link a:focus-visible {
+    outline: 3px solid rgba(53, 126, 221, 0.3);
+    outline-offset: 5px;
+    border-radius: 2px;
+}
+
+.pdf-label {
+    color: #687386;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
 }
 
 
@@ -155,13 +192,13 @@ a {
     background: #f5f7fa;
     border: 1px solid #e2e2e2;
     border-radius: 12px;
-    padding: 1.5rem;
     overflow-x: auto;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
 }
 
 .bibtex-entry {
     margin: 0;
+    padding: 1.4rem 1.5rem 1.5rem;
     color: #263244;
     font-size: 0.95rem;
     line-height: 1.65;
@@ -169,14 +206,19 @@ a {
 }
 
 .bibtex-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 1.25rem;
 }
 
 .bibtex-heading .f2-5 {
     margin: 0;
+}
+
+.bibtex-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #e2e2e2;
+    background: rgba(255, 255, 255, 0.38);
 }
 
 .copy-button {
@@ -251,6 +293,10 @@ a {
     }
 
     .bibtex-container {
+        border-radius: 10px;
+    }
+
+    .bibtex-entry {
         padding: 1rem;
     }
 
