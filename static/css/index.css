@@ -1,79 +1,200 @@
-.header-bg {
-    background-image: url('../images/emnlp_2026_background_v0.jpg');
-    background-size: cover; /* Ensure the image covers the header */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+/* ---------- General ---------- */
+
+body {
+    color: #222;
+    background: #fff;
+    line-height: 1.5;
 }
 
-.header-bg p {
-    text-shadow:
-        -1px -1px 0 #000,  
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+a {
+    transition: color 0.15s ease;
+}
+
+
+/* ---------- Header ---------- */
+
+.header-bg {
+    background-image: url('../images/emnlp_2026_background_v0.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .header-bg-opacity {
-    background-color: rgba(0, 0, 0, 0.3); /* Black with 50% opacity */
-    padding: 0.5rem; /* Optional: Adds padding inside the header */
+    background: rgba(0, 0, 0, 0.38);
+    padding: 1rem;
 }
 
+.header-bg p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+
+/* ---------- Presenters ---------- */
+
+#presenters {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2.5rem;
+}
 
 .presenter {
     text-align: center;
-    margin-right: 2em;
-    margin-left: 2em;
+    min-width: 0;
 }
 
 .presenter-img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%; /* Optional: Makes the images circular */
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 0.7rem;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
 }
 
+.presenter p {
+    line-height: 1.25;
+    margin-top: 0.35rem;
+}
+
+.presenter a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+/* ---------- Affiliations ---------- */
+
+#organization {
+    margin-top: 1.5rem;
+    color: #555;
+}
+
+#organization p {
+    margin: 0.35rem 0;
+}
+
+
+/* ---------- Section typography ---------- */
+
 .f2-5 {
-    font-size: 2.0em;
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
 }
 
 .f4-5 {
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 .styled-hr {
     border: 0;
-    height: 1.5px;
-    background-color: #e0e0e0; /* Light grey color */
-    margin: 40px 0;
-    opacity: 0.7;
+    height: 1px;
+    background-color: #ddd;
+    margin: 3rem 0;
 }
+
+
+/* ---------- Schedule ---------- */
 
 .schedule-table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
-}
-.schedule-table th, .schedule-table td {
-    padding: 0.5rem;
-    text-align: left;
-}
-.schedule-table tr {
-    border-bottom: 1px solid #e1e1e1;
-}
-.schedule-table tr:last-child {
-    border-bottom: none;
+    margin-top: 1.25rem;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
+.schedule-table th {
+    background: #f5f7fa;
+    font-weight: 600;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.schedule-table tr:not(:last-child) td {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.schedule-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.schedule-table td:first-child {
+    white-space: nowrap;
+}
+
+
+/* ---------- BibTeX ---------- */
 
 .bibtex-container {
     position: relative;
-    background-color: #f6f6f6;
-    border-radius: 0.5rem;
-    padding: 0.5em 1em;
+    background-color: #f6f7f8;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+}
+
+.bibtex-entry {
+    margin: 0;
+    line-height: 1.5;
 }
 
 .copy-icon {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.8rem;
+    right: 0.9rem;
     cursor: pointer;
-    color: #333;
+    color: #555;
+}
+
+
+/* ---------- Responsive ---------- */
+
+/* Still keeps all five photos in ONE row on normal laptop/desktop screens */
+@media (max-width: 800px) {
+    #presenters {
+        gap: 0.75rem;
+    }
+
+    .presenter-img {
+        width: 105px;
+        height: 105px;
+    }
+
+    .presenter p {
+        font-size: 0.9rem;
+    }
+}
+
+/* On phones, wrapping is preferable to making the portraits microscopic */
+@media (max-width: 600px) {
+    #presenters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 1rem;
+    }
+
+    .presenter-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .schedule-table {
+        font-size: 0.9rem;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.65rem;
+    }
 }
